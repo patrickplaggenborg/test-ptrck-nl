@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiper Tips Example</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      margin: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .swiper-slide {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .swiper {
+        max-width: calc(2 * 320px + 16px);
+        margin: 0 auto;
+      }
+      .swiper-slide {
+        width: 320px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Tips</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Tip 1</div>
+      <div class="swiper-slide">Tip 2</div>
+      <div class="swiper-slide">Tip 3</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      spaceBetween: 16,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2,
+          allowTouchMove: true,
+        },
+        768: {
+          slidesPerView: 2,
+          allowTouchMove: false,
+          spaceBetween: 16,
+        },
+      },
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faciliteiten Test</title>
+  <style>
+    .facilities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(8, min-content); /* Max 8 items per column on mobile */
+      grid-auto-flow: column;
+      gap: 20px;
+    }
+    
+    .facility {
+      break-inside: avoid; /* Keep each facility item together */
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 0;
+      margin-bottom: 5px;
+    }
+    
+    .icon {
+      font-size: 1.2em;
+    }
+    
+    /* Desktop: 3 columns */
+    @media (min-width: 768px) {
+      .facilities {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, min-content); /* Max 5 items per column on desktop */
+        gap: 20px;
+      }
+    }
+    
+    /* Large desktop: 4 columns for very wide screens */
+    @media (min-width: 1200px) {
+      .facilities {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, min-content); /* Max 4 items per column on large desktop */
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Faciliteiten</h1>
+  <h2>Meest populair</h2>
+
+  <div class="facilities">
+    <div class="facility"><span class="icon">❄️</span>Airco</div>
+    <div class="facility"><span class="icon">🍸</span>Bar</div>
+    <div class="facility"><span class="icon">💃</span>Discotheek</div>
+    <div class="facility"><span class="icon">🐕</span>Huisdieren toegestaan</div>
+    <div class="facility"><span class="icon">🧊</span>Koelkast</div>
+    <div class="facility"><span class="icon">🔒</span>Kluisje</div>
+    <div class="facility"><span class="icon">🛗</span>Lift</div>
+    <div class="facility"><span class="icon">🚗</span>Parkeerplaats</div>
+    <div class="facility"><span class="icon">🎭</span>Animatie</div>
+    <div class="facility"><span class="icon">🤿</span>Duikcentrum</div>
+    <div class="facility"><span class="icon">🚲</span>Fietsverhuur</div>
+    <div class="facility"><span class="icon">💪</span>Fitness</div>
+    <div class="facility"><span class="icon">🏊‍♂️</span>Aquapark</div>
+    <div class="facility"><span class="icon">🏰</span>Kids Club</div>
+    <div class="facility"><span class="icon">👥</span>Adult Only</div>
+  </div>
+
+  <a href="#" class="more-link">Toon alle 22 faciliteiten</a>
+
+  <p class="disclaimer">
+    Dé VakantieDiscounter besteedt veel zorg en aandacht aan het up-to-date houden van deze informatie.
+    Echter, zowel faciliteiten als eventuele kosten veranderen met grote regelmaat. Aan dit overzicht kunnen
+    daarom geen rechten worden ontleend.
+  </p>
+
+</body>
+</html>

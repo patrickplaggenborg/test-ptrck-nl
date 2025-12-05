@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic Search Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .site-header {
+      background-color: #FFF497;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .site-header h1 {
+      color: #333;
+      font-size: 1.5rem; /* Smaller text */
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 1rem;
+      min-height: 200vh; /* Ensure we have scrollable content */
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #e0f0ff;
+      padding: 1rem;
+    }
+
+    .sidebar-header {
+      background: #cce4ff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .filter {
+      background: #a3d5ff;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 4px;
+      /* Make filters taller */
+      min-height: 80px;
+    }
+
+    .content {
+      flex: 1;
+      background: #ffe0f0;
+      padding: 1rem 1rem 1rem 2rem;
+    }
+
+    .result {
+      background: #ffb3d1;
+      margin: 1rem 0;
+      padding: 1.5rem;
+      border-radius: 4px;
+      /* Make results taller */
+      min-height: 150px;
+    }
+
+    .site-footer {
+      background-color: #B4E4FE;
+      height: 800px;
+      padding: 2rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Site-wide header -->
+  <header class="site-header">
+    <div class="header-content">
+      <h1>Search Website</h1>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar-header">Filters</div>
+      <div class="filters">
+        <!-- Filter list at least 2x viewport height -->
+        <div class="filter">Filter 1</div>
+        <div class="filter">Filter 2</div>
+        <div class="filter">Filter 3</div>
+        <div class="filter">Filter 4</div>
+        <div class="filter">Filter 5</div>
+        <div class="filter">Filter 6</div>
+        <div class="filter">Filter 7</div>
+        <div class="filter">Filter 8</div>
+        <div class="filter">Filter 9</div>
+        <div class="filter">Filter 10</div>
+        <div class="filter">Filter 11</div>
+        <div class="filter">Filter 12</div>
+        <div class="filter">Filter 13</div>
+        <div class="filter">Filter 14</div>
+        <div class="filter">Filter 15</div>
+        <div class="filter">Filter 16</div>
+        <div class="filter">Filter 17</div>
+        <div class="filter">Filter 18</div>
+        <div class="filter">Filter 19</div>
+        <div class="filter">Filter 20</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Result list at least 4x viewport height -->
+      <div class="result">Result 1</div>
+      <div class="result">Result 2</div>
+      <div class="result">Result 3</div>
+      <div class="result">Result 4</div>
+      <div class="result">Result 5</div>
+      <div class="result">Result 6</div>
+      <div class="result">Result 7</div>
+      <div class="result">Result 8</div>
+      <div class="result">Result 9</div>
+      <div class="result">Result 10</div>
+      <div class="result">Result 11</div>
+      <div class="result">Result 12</div>
+      <div class="result">Result 13</div>
+      <div class="result">Result 14</div>
+      <div class="result">Result 15</div>
+      <div class="result">Result 16</div>
+      <div class="result">Result 17</div>
+      <div class="result">Result 18</div>
+      <div class="result">Result 19</div>
+      <div class="result">Result 20</div>
+      <div class="result">Result 21</div>
+      <div class="result">Result 22</div>
+      <div class="result">Result 23</div>
+      <div class="result">Result 24</div>
+      <div class="result">Result 25</div>
+      <div class="result">Result 26</div>
+      <div class="result">Result 27</div>
+      <div class="result">Result 28</div>
+      <div class="result">Result 29</div>
+      <div class="result">Result 30</div>
+    </div>
+  </div>
+
+  <!-- Site-wide footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Footer
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+html, body, #map-canvas {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+.hide{ display: none;  }
+.show{ display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+display: none;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/Preloader_3.gif) center no-repeat #fff;
+}

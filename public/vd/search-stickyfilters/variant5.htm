@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Sticky Filters</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .site-header {
+      background-color: #FFF497;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .site-header h1 {
+      color: #333;
+      font-size: 1.5rem; /* Smaller text */
+    }
+
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      padding: 0 1rem;
+      min-height: 200vh; /* Ensure we have scrollable content */
+    }
+
+    .leftbar {
+      width: 250px;
+      background: #e0f0ff;
+      padding: 2rem 1rem;
+    }
+
+    .filters {
+      position: sticky;
+      top: 0;
+      background: #e0f0ff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      z-index: 100;
+      gap: 1rem;
+    }
+
+    .filter {
+      background: #a3d5ff;
+      padding: 2rem;
+      border-radius: 4px;
+      min-height: 80px;
+    }
+
+    .content {
+      flex: 1;
+      background: #ffe0f0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .result {
+      background: #ffb3d1;
+      padding: 2rem;
+      border-radius: 4px;
+      min-height: 150px;
+    }
+
+    .site-footer {
+      background-color: #B4E4FE;
+      height: 800px;
+      padding: 2rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Site-wide header -->
+  <header class="site-header">
+    <div class="header-content">
+      <h1>Search</h1>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="leftbar">
+      <div class="filters">
+        <!-- Filter list at least 2x viewport height -->
+        <div class="filter">Filter 1</div>
+        <div class="filter">Filter 2</div>
+        <div class="filter">Filter 3</div>
+        <div class="filter">Filter 4</div>
+        <div class="filter">Filter 5</div>
+        <div class="filter">Filter 6</div>
+        <div class="filter">Filter 7</div>
+        <div class="filter">Filter 8</div>
+        <div class="filter">Filter 9</div>
+        <div class="filter">Filter 10</div>
+        <div class="filter">Filter 11</div>
+        <div class="filter">Filter 12</div>
+        <div class="filter">Filter 13</div>
+        <div class="filter">Filter 14</div>
+        <div class="filter">Filter 15</div>
+        <div class="filter">Filter 16</div>
+        <div class="filter">Filter 17</div>
+        <div class="filter">Filter 18</div>
+        <div class="filter">Filter 19</div>
+        <div class="filter">Filter 20</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- Result list at least 4x viewport height -->
+      <div class="result">Result 1</div>
+      <div class="result">Result 2</div>
+      <div class="result">Result 3</div>
+      <div class="result">Result 4</div>
+      <div class="result">Result 5</div>
+      <div class="result">Result 6</div>
+      <div class="result">Result 7</div>
+      <div class="result">Result 8</div>
+      <div class="result">Result 9</div>
+      <div class="result">Result 10</div>
+      <div class="result">Result 11</div>
+      <div class="result">Result 12</div>
+      <div class="result">Result 13</div>
+      <div class="result">Result 14</div>
+      <div class="result">Result 15</div>
+      <div class="result">Result 16</div>
+      <div class="result">Result 17</div>
+      <div class="result">Result 18</div>
+      <div class="result">Result 19</div>
+      <div class="result">Result 20</div>
+      <div class="result">Result 21</div>
+      <div class="result">Result 22</div>
+      <div class="result">Result 23</div>
+      <div class="result">Result 24</div>
+      <div class="result">Result 25</div>
+      <div class="result">Result 26</div>
+      <div class="result">Result 27</div>
+      <div class="result">Result 28</div>
+      <div class="result">Result 29</div>
+      <div class="result">Result 30</div>
+    </div>
+  </div>
+
+  <!-- Site-wide footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      Footer
+    </div>
+  </footer>
+
+  <script>
+    const filters = document.querySelector('.filters');
+    const leftbar = document.querySelector('.leftbar');
+    
+    let currentState = 'bottom-sticky';
+    let hasScrolledUp = false;
+    let lastScrollY = window.scrollY;
+
+    function setBottomStickyPosition() {
+      const filtersRect = filters.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const filtersHeight = filtersRect.height;
+      const padding = 32; // 2rem = 32px
+      const endOffset = 100; // extra space at the bottom
+      
+      filters.style.position = 'sticky';
+      filters.style.top = `calc(-${filtersHeight + padding + endOffset}px + 100vh)`;
+      
+      console.log('-------------------');
+      console.log('SETTING BOTTOM STICKY POSITION');
+      console.log('DEBUG:');
+      console.log('- Filters height:', filtersHeight);
+      console.log('- Viewport height:', viewportHeight);
+      console.log('- Padding adjustment:', padding);
+      console.log('- End offset:', endOffset);
+      console.log('- Calculated top:', `calc(-${filtersHeight + padding + endOffset}px + 100vh)`);
+    }
+
+    function switchToBottomStickyState() {
+      setBottomStickyPosition();
+      currentState = 'bottom-sticky';
+      hasScrolledUp = false;
+      
+      console.log('-------------------');
+      console.log('STATE CHANGE: Switched to Bottom Sticky state');
+      console.log('DEBUG:');
+      console.log('- Current state was:', currentState.toUpperCase());
+    }
+
+    function switchToRelativeState() {
+      const filtersRect = filters.getBoundingClientRect();
+      const leftbarRect = leftbar.getBoundingClientRect();
+      const padding = 32; // 2rem = 32px
+      const currentDistance = filtersRect.top - leftbarRect.top - padding;
+      
+      filters.style.position = 'relative';
+      filters.style.top = `${currentDistance}px`;
+      currentState = 'relative';
+      
+      console.log('-------------------');
+      console.log('STATE CHANGE: Switched to Relative state');
+      console.log('DEBUG:');
+      console.log('- Scroll direction: Up');
+      console.log('- First scroll up: Yes');
+      console.log('- Current distance to parent:', currentDistance);
+      console.log('- Padding adjustment:', padding);
+      console.log('- Current state was:', currentState.toUpperCase());
+    }
+
+    function switchToTopStickyState() {
+      const filtersRect = filters.getBoundingClientRect();
+      const padding = 32; // 2rem = 32px
+      
+      filters.style.position = 'sticky';
+      filters.style.top = `${padding}px`;
+      currentState = 'top-sticky';
+      
+      console.log('-------------------');
+      console.log('STATE CHANGE: Switched to Top Sticky state');
+      console.log('DEBUG:');
+      console.log('- Scroll direction: Up');
+      console.log('- Filters top reached viewport top');
+      console.log('- Filters top position:', filtersRect.top);
+      console.log('- Parent padding adjustment:', padding);
+      console.log('- Current state was:', currentState.toUpperCase());
+    }
+
+    function logFiltersPosition() {
+      const filtersRect = filters.getBoundingClientRect();
+      const leftbarRect = leftbar.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const computedStyle = window.getComputedStyle(filters);
+      const padding = 32; // 2rem = 32px
+      const endOffset = 100; // extra space at the bottom
+      const bottomPadding = padding; // bottom padding is also 2rem
+      
+      // Check for scroll direction
+      const currentScrollY = window.scrollY;
+      const isScrollingUp = currentScrollY < lastScrollY;
+      lastScrollY = currentScrollY;
+
+      // Log state and position information
+      console.log('-------------------');
+      console.log('STATE: ' + currentState.toUpperCase());
+      console.log('Scroll direction:', isScrollingUp ? 'Up' : 'Down');
+      console.log('Viewport height:', viewportHeight);
+      console.log('Filters position:');
+      console.log('- Top (viewport):', filtersRect.top);
+      console.log('- Bottom (viewport):', filtersRect.bottom);
+      console.log('- CSS top:', computedStyle.top);
+      console.log('- Distance to leftbar top:', filtersRect.top - leftbarRect.top);
+      console.log('- Switch threshold:', viewportHeight - endOffset - bottomPadding);
+      
+      // Switch to Relative state if conditions are met
+      if ((currentState === 'bottom-sticky' && isScrollingUp && !hasScrolledUp) ||
+          (currentState === 'top-sticky' && !isScrollingUp)) {
+        hasScrolledUp = currentState === 'bottom-sticky';
+        switchToRelativeState();
+      }
+      
+      // Switch to Top Sticky state if conditions are met
+      if (currentState !== 'top-sticky' && isScrollingUp && filtersRect.top >= padding) {
+        switchToTopStickyState();
+      }
+      
+      // Switch to Bottom Sticky state if conditions are met
+      if ((currentState === 'relative' && filtersRect.bottom <= (viewportHeight - endOffset - bottomPadding) && !isScrollingUp)) {
+        switchToBottomStickyState();
+      }
+    }
+
+    // Set initial position when page loads
+    window.addEventListener('load', setBottomStickyPosition);
+    window.addEventListener('scroll', logFiltersPosition);
+  </script>
+</body>
+</html>

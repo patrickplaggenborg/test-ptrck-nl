@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<!-- TITLE OF SITE -->
+	<title>Nemo - Landing Page Template with Builder</title>
+
+	<!-- META DATA -->
+	<meta name="description" content="Ultimate all in one landing page template with drag and drop builder" />
+	<meta name="keywords" content="nemo, landing page, responsive, template, builder, drag and drop" />
+	<meta name="author" content="TemplateOcean">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- =========================
+	FAV AND TOUCH ICONS  
+	============================== -->
+	<link rel="icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+	<!-- =========================
+	STYLESHEETS 
+	============================== -->
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	
+	<!-- EXTERNAL PLUGIN CSS -->
+	<link rel="stylesheet" href="css/swiper.min.css"> <!-- Screenshot Slider -->
+	<link rel="stylesheet" href="css/nivo-lightbox.css"> <!-- Screenshot Slider -->
+	<link rel="stylesheet" href="css/themes/default/default.css"> <!-- Nivo Lightbox -->
+	<link rel="stylesheet" href="css/jquery.datetimepicker.css"> <!-- Date & Time Picker -->
+
+	<!-- TYPOGRAPHY -->
+	<link id="fromTypography" href="css/typography/typography-1.css" rel="stylesheet">
+	
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- COLORS -->
+	<link id="fromColor" href="css/colors/green.css" rel="stylesheet">
+
+	<!-- RESPONSIVE FIXES -->
+	<!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body class="body-container">
+<div id="page" class="page">    <!-- start page --> 
+
+<!-- =========================
+     RESTAURANT HOME 
+============================== -->
+<section class="resraurant-order secondary-bg content-half padding-120-125" id="resraurant-order">
+	<div class="container-half container-half-left cover-bg pr30 editBG" style="background-image: url(images/restaurant-1.jpg);"></div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-6 pl30">
+				<div class="section-heading">
+
+					<h2 class="heading-text">Reservation / Order</h2>
+					<hr class="lines">
+
+				</div> <!-- /.section-heading -->
+				
+				<ul class="nav nav-btn-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#reservation" class="btn btn-secondary btn-md" aria-controls="reservation" role="tab" data-toggle="tab">Reservation</a></li>
+					<li role="presentation"><a href="#food-order" class="btn btn-secondary btn-md" aria-controls="food-order" role="tab" data-toggle="tab">Food Order</a></li>
+				</ul>
+
+				<div class="tab-content query-form">
+					<!-- RESERVATION FORM -->
+					<div role="tabpanel" class="tab-pane active" id="reservation">
+						<form action="php/reservation.php">
+							<div class="query-group">
+								<p><i class="icon svg-arrow-carrot-2right"></i> Reservation Details</p>
+
+								<div class="row">
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="reservation-date">Select Date</label>
+										<input type="text" name="date" id="reservation-date" class="form-standard secondary-color-bg" placeholder="Chose Date">
+									</div>
+
+									<div class="col-sm-6 form-group pl10">
+										<label class="sr-only" for="reservation-time">Select Time</label>
+										<input type="text" name="time" id="reservation-time" class="form-standard secondary-color-bg" placeholder="Chose Time">
+									</div>
+
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="reservation-total-people">Total People</label>
+										<input type="text" name="people" id="reservation-total-people" class="form-standard secondary-color-bg" placeholder="Total People">
+									</div>
+								</div>	<!-- /.row -->
+							</div> <!-- /.query-group -->
+
+							<div class="query-group">
+								<p><i class="icon svg-arrow-carrot-2right"></i> Your Contact Details</p>
+
+								<div class="row">
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="reservation-name">Your Name</label>
+										<input type="text" name="name" id="reservation-name" class="form-standard secondary-color-bg" placeholder="Your Name">
+									</div>
+
+									<div class="col-sm-6 form-group pl10">
+										<label class="sr-only" for="reservation-email">Your Email</label>
+										<input type="email" name="email" id="reservation-email" class="form-standard secondary-color-bg" placeholder="Your Email">
+									</div>
+
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="reservation-tel">Your Phone</label>
+										<input type="email" name="tel" id="reservation-tel" class="form-standard secondary-color-bg" placeholder="Phone Number">
+									</div>
+								</div>	<!-- /.row -->
+							</div> <!-- /.query-group -->
+
+							<div class="query-group">
+								<button class="btn btn-base btn-lg"><span>Query for Reservation</span></button>
+							</div>
+
+							<div class="result">
+								<p class="success-msg"><i class="icon svg-check icon-xs"></i> Thanks! Your message has been sent.</p>
+								<p class="error-msg"><i class="icon svg-close-circle icon-xs"></i> Sorry, Something went wrong!</p>
+							</div>
+						</form>
+					</div> <!-- /END RESERVATION FORM -->
+
+					<!-- FOOD ORDER -->
+					<div role="tabpanel" class="tab-pane" id="food-order">
+						<form action="#" class="food-order">
+							<ul class="order-list"></ul>
+
+							<div class="order-select-menu clearfix">
+								<div class="grid-select-dropdown">
+									<div class="form-group select-dropdown">
+										<select class="form-standard secondary-color-bg">
+											<option value="volvo" data-price="150">Volvo ( $150 )</option>
+											<option value="saab" data-price="150">Saab ( $150 )</option>
+											<option value="mercedes" data-price="150">Mercedes ( $150 )</option>
+											<option value="audi" data-price="150">Audi ( $150 )</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group grid-number">
+									<input type="number" name="food-quantity" class="form-standard secondary-color-bg">
+								</div>
+
+								<button class="btn btn-base btn-rectangle btn-sm"><span>Add</span></button>
+							</div>
+
+							<div class="row get-food">
+								<div class="col-sm-6">
+									<div class="radio-standard">
+										<input type="radio" id="radio-food-pickup" name="get-food" value="Pickup">
+										<label for="radio-food-pickup" class="">Pickup</label>
+									</div>
+
+									<div class="radio-standard">
+										<input type="radio" id="radio-food-delivery" name="get-food" value="Delivery">
+										<label for="radio-food-delivery" class="">Delivery</label>
+									</div>
+								</div>
+
+								<div class="col-sm-6">
+									<div class="radio total-payment">
+										<p>Total: <span>$<span id="payment-amount">100</span> USD</span></p>
+									</div>
+								</div>
+							</div>
+
+							<div class="query-group">
+								<div class="row">
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="order-name">Your Name</label>
+										<input type="text" id="order-name" class="form-standard secondary-color-bg" placeholder="Your Name">
+									</div>
+
+									<div class="col-sm-6 form-group pl10">
+										<label class="sr-only" for="order-email">Your Email</label>
+										<input type="email" id="order-email" class="form-standard secondary-color-bg" placeholder="Your Email">
+									</div>
+
+									<div class="col-sm-6 form-group pr10">
+										<label class="sr-only" for="order-tel">Phone Number</label>
+										<input type="tel" id="order-tel" class="form-standard secondary-color-bg" placeholder="Phone Number">
+									</div>
+
+									<div class="col-sm-6 form-group pl10">
+										<div class="select-dropdown">
+											<select class="form-standard secondary-color-bg">
+												<option value="0" selected disabled>Payment Method</option>
+												<option value="1">PayPal</option>
+												<option value="2">Credit Card</option>
+												<option value="3">Wire Transfer</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-sm-12 form-group">
+										<label class="sr-only" for="order-msg">Your Name</label>
+										<input type="text" id="order-msg" class="form-standard secondary-color-bg" placeholder="Your Message">
+									</div>
+								</div> <!-- /.row -->
+							</div>
+
+							<button class="btn btn-base btn-lg"><span>Order Your Food Now</span></button>
+
+							<div class="form-message mt30"></div>
+
+						</form>
+					</div> <!-- /END FOOD ORDER -->
+				</div>
+
+				
+			</div>
+		</div> <!-- /.row -->
+	</div>
+</section>
+
+<script>
+	$(function() {
+		$('#reservation-date').datetimepicker({
+			timepicker: false,
+			format: 'Y-m-d'
+		});
+
+		$('#reservation-time').datetimepicker({
+			datepicker: false,
+			format: 'h:i A'
+		});
+	});
+</script>
+
+</div> <!-- /end page --> 
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/nivo-lightbox.min.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.localScroll.min.js"></script>
+<script src="js/jquery.nav.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/matchMedia.js"></script>
+<script src="js/jquery.mixitup.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/SVGinject.js"></script>
+<script src="js/jquery.datetimepicker.full.min.js"></script>
+<script src="js/application.js"></script>
+
+</body>
+</html>

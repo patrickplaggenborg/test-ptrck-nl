@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="nl"><head><meta name="ROBOTS" content="INDEX,FOLLOW"><meta name="keywords" content=""><meta name="description" content="">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-config" content="none">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="icon" type="image/png" href="https://image.e.vakantiediscounter.nl/lib/fe3a11717564047c771276/m/1/d4eac8d7-d487-4e91-aa36-59fc55009caf.png">
+    <title>Contactformulier | dé VakantieDiscounter</title>
+    <link rel="stylesheet" href="files/css.css">
+    <link rel="stylesheet" href="files/jquery-ui.css">
+    <script src="files/jquery-1.js"></script>
+    <script src="files/jquery-ui.js"></script>
+    <style type="text/css">
+      p.break {
+        border-top: 1px solid #b7deff;
+        padding-top: 20px;
+      }
+      textarea {
+        border: 1px solid #b7deff;
+        width: 100%;
+        height: 100px;
+        margin-top: 20px;
+      }
+      input.error {
+        border-color: #f00;
+      }
+      .error .wSelect-arrow{
+          margin-right: 20px;
+      }
+      input.file_input {
+        border: 0;
+      }
+      img.file_preview.show {
+        border: 1px solid #b7deff;
+        padding: 5px;
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+      }
+      input.file_input {
+        height: auto;
+        margin: 10px 0;
+        display: none;
+      }
+      input.file_input.show {
+        display: initial;
+      }
+      form .form_option {
+        display: none;
+      }
+      form .form_option.show {
+        display: block;
+      }
+      main.form_view {
+        display: none;
+      }
+      main.form_view.show_view {
+        display: block;
+      }
+      .right i {
+        font-size: 12px;
+        color: #ccc;
+        font-style: italic;
+      }
+      article.preferences .row.button_center {
+        width: 100%;
+      }
+      button.clear_file {
+        display: none;
+        border: 1px solid #f00;
+        font-size: 10px;
+        padding: 3px 5px;
+        color: #f00;
+        margin-left: 15px;
+        margin-bottom: 20px;
+      }
+      button.clear_file.show {
+        display: initial;
+      }
+      div.file_document {
+        margin-bottom: 15px;
+        padding-left: 15px;
+        display: none;
+      }
+      div.file_document.show {
+        display: block;
+      }
+      div.file_document span.document_name {
+        color: #444;
+        display: inline-block;
+        padding-left: 5px;
+        padding-bottom: 10px;
+      }
+      div.file_document span.document_icon {
+        width: 40px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 10px;
+        display: inline-block;
+        background-image: url("https://image.e.vakantiediscounter.nl/lib/fe3a11717564047c771276/m/1/7586a811-7fb6-4b8e-8a57-d1e856c3a5c1.png");
+        background-size: auto 40px;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+      }
+      hr.file_break {
+        border: 0;
+        background-color: #eee;
+        height: 1px;
+        margin-bottom: 15px;
+      }
+      span.file_upload_message {
+        padding-left: 15px;
+        padding-top: 5px;
+        font-style: italic;
+        font-size: 12px;
+      }
+      .ui-datepicker-title span {
+       display: inline;
+       color: #333;
+      }
+      .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+       background-color: #b7deff !important;
+       border-color: #b7deff;
+      }
+      .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+           border: 1px solid #b7deff;
+      background: #fff;
+      font-weight: normal;
+      color: #333;
+      }
+      .ui-widget-header {
+       background-color: #fff;
+       border-color: #b7deff;
+       color: #333;
+      }
+      .ui-datepicker-calendar thead tr th span {
+       color: #333;
+      }
+
+      .tall-select .wSelect-options-holder{
+          height: auto !important;
+          max-width: unset;
+          width: 120%;
+      }
+
+      .tall-select .wSelect-options{
+          max-height: 600px;
+      }
+    </style>
+    <script>
+       (function (factory) {
+           if (typeof define === "function" && define.amd) {
+
+               // AMD. Register as an anonymous module.
+               define(["../widgets/datepicker"], factory);
+           } else {
+
+               // Browser globals
+               factory(jQuery.datepicker);
+           }
+       }(function (datepicker) {
+
+           datepicker.regional.nl = {
+               closeText: "Sluiten",
+               prevText: "←",
+               nextText: "→",
+               currentText: "Vandaag",
+               monthNames: ["januari", "februari", "maart", "april", "mei", "juni",
+                   "juli", "augustus", "september", "oktober", "november", "december"
+               ],
+               monthNamesShort: ["jan", "feb", "mrt", "apr", "mei", "jun",
+                   "jul", "aug", "sep", "okt", "nov", "dec"
+               ],
+               dayNames: ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"],
+               dayNamesShort: ["zon", "maa", "din", "woe", "don", "vri", "zat"],
+               dayNamesMin: ["zo", "ma", "di", "wo", "do", "vr", "za"],
+               weekHeader: "Wk",
+               dateFormat: "dd-mm-yy",
+               firstDay: 1,
+               isRTL: false,
+               showMonthAfterYear: false,
+               yearSuffix: ""
+           };
+           datepicker.setDefaults(datepicker.regional.nl);
+
+           return datepicker.regional.nl;
+
+       }));
+       $(function () {
+           $("#datepicker").datepicker({
+               regional: "nl"
+           });
+       });
+    </script>
+  </head>
+  <body class="page-optin">
+    <header class="sitewide optin">
+      <section class="basics">
+        <div class="content">
+          <article class="basics-branding has-zoover">
+            <a href="https://www.vakantiediscounter.nl/" class="home">
+              <div class="hero-vd"></div>
+              <div class="logo-vd">dé VakantieDiscounter</div>
+            </a>
+          </article>
+
+          <article class="basics-phone-stimulus">
+            <p></p>
+            <p></p>
+          </article>
+          <article class="basics-phone-mobile">
+            <p></p>
+          </article>
+        </div>
+      </section>
+    </header>
+
+    <main class="wrapper form_view" id="form_thank_you">
+      <div class="content wrapper text-page">
+        <div class="container">
+          <h1>Bedankt voor uw contactverzoek</h1>
+          <div id="content-wrapper">
+            <p>
+              We hebben uw bericht in goede orde ontvangen. We streven
+ernaar om binnen 5 werkdagen een inhoudelijke reactie te geven over de
+verdere afhandeling van uw bericht.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="wrapper form_view" id="form_processing">
+      <div class="content wrapper text-page">
+        <div class="container">
+          <h1>Uw gegevens worden verzonden</h1>
+          <div id="content-wrapper"><p>Een moment geduld aub...</p></div>
+        </div>
+      </div>
+    </main>
+
+    <main class="wrapper form_view show_view" id="form_main">
+      <div class="content wrapper">
+        <div class="container">
+          <h1>Setup your personal email signature</h1>
+          <article class="preferences">
+            <div id="personal_data" class="div-block personal_data">
+              <form method="post" class="right" action="">
+
+                <h2>1. Customize your signature</h2>
+                <p>&nbsp;</p>
+
+
+                <div class="row clearfix">
+                  <div class="left"><dt>Greeting</dt></div>
+                  <div class="right">
+                    <input name="greeting" type="text" data-required="text" value="Met vriendelijke groet,">
+                  </div>
+                </div>
+
+                <p>&nbsp;</p>
+
+                <p><strong>Your contact details</strong></p>
+
+                <div class="row clearfix">
+                  <div class="left"><dt>Full name</dt></div>
+                  <div class="right">
+                    <input name="fullname" type="text" data-required="text" placeholder="Peter Jansen">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>Function title</dt></div>
+                  <div class="right">
+                    <input name="function" type="text" data-required="text" placeholder="Office Manager">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>Email</dt></div>
+                  <div class="right">
+                    <input name="emailaddress" type="text" data-required="email" placeholder="pjansen@elmar.nl">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>Mobile phone</dt></div>
+                  <div class="right">
+                    <input name="cellphone" type="text" placeholder="06 - 12345678">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>Office phone</dt></div>
+                  <div class="right">
+                    <input name="phone" type="text" value="088 - 7 747 747">
+                  </div>
+                </div>
+
+                <p>&nbsp;</p>
+
+                <p><strong>Add your call to action</strong></p>
+
+                <div class="row clearfix">
+                  <div class="left"><dt></dt></div>
+                  <div class="right">
+                    <select data-required="picklist" name="questiontopic" id="questiontopic" class="additionalFormFields wSelect-el">
+                      <option value="Wel een boeking" data-icon="https://image.e.vakantiediscounter.nl/lib/fe3a11717564047c771276/m/1/be4249721-4a6c-8500-bc6a489b370f.png" data-form="complaint_comment">Display call to action</option>
+                      <option value="Geen boeking" data-icon="https://image.e.vakantiediscounter.nl/lib/fe3a11717564047c771276/m/1/cf73ac20-2b42-45d7-a014-7.png" data-form="complaint_comment">Hide</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row clearfix">
+                  <div class="left"><dt>Type</dt></div>
+                  <div class="right">
+                    <select data-required="picklist" name="questiontopic" id="questiontopic" class="additionalFormFields wSelect-el">
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/Kjgxtnx/preview-sun.png" data-form="complaint_comment">Newsletter</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/0K31qc3/preview-megaphone.png" data-form="complaint_comment">Job listing</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/S5DrTcX/preview-calendar.png" data-form="complaint_comment">My availability</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/c1cDVj5/preview-youtube.png" data-form="complaint_comment">YouTube</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/vZ4yP3z/preview-trophy.png" data-form="complaint_comment">Award</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/FqdFqBp/preview-star.png" data-form="complaint_comment">Blog</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row clearfix">
+                  <div class="left"><dt>Prefix</dt></div>
+                  <div class="right">
+                    <input name="phone" type="text" value="Be the first to receive our best deals!">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>Link title</dt></div>
+                  <div class="right">
+                    <input name="phone" type="text" value="Sign up for our newsletter">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <div class="left"><dt>URL</dt></div>
+                  <div class="right">
+                    <input name="phone" type="text" value="https://cloud.e.vakantiediscounter.nl/aanmelden">
+                  </div>
+                </div>
+
+                <p>&nbsp;</p>
+                <p class="break">&nbsp;</p>
+
+                <h2>2. Preview your signature</h2>
+                <p>&nbsp;</p>
+
+                <!-- START SIGNATURE PREVIEW -->
+                <div style="width: 570px; padding: 32px; border: 1px solid #ccc;">
+                <!-- START SIGNATURE -->
+                <table id="vd-signature" style="margin: 0; padding: 0;" cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td style="font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 18px; color: #282C2E; padding-bottom:24px;">Met vriendelijke groet,
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h2 style="font-family: 'Helvetica'; font-style: normal; font-weight: 700; font-size: 13px; line-height: 18px; color: #282C2E; margin-bottom:7px;">Anton Buning</h2>
+                      <h3 margin-top="0" margin-bottom="10" style="font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 14px; color: #60686D; margin-top:0; margin-bottom:10px;">Head of Product</h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 13px 0 3px 0;">
+                      <table id="vd-email" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="padding: 0 8px 0 0;">
+                            <img src="https://i.ibb.co/fHDqsKj/envelope.png" style="width: 18px; height: 18px;" width="18" height="18">
+                          </td>
+                          <td style="display: inline-block; font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 16px;"><a href="mailto:anton@vakantiediscounter.nl" style="font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 14px; text-decoration-line: underline; color: #37B0F2;">anton@vakantiediscounter.nl</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 4px 0 4px 0;">
+                      <table id="vd-cellphone" style="display:inline-table" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="padding: 0 8px 0 0;">
+                            <img src="https://i.ibb.co/fGKBXzS/iphone-700.png" style="width: 18px; height: 18px;" width="18" height="18">
+                          </td>
+                          <td style="display: inline-block; font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 14px; color: #282C2E; text-decoration-line: none">
+                            06 - 30 20 10 69
+                          </td>
+                          <td width="24"></td>
+                          <td style="padding: 0 8px 0 0;">
+                            <img src="https://i.ibb.co/BP1hC0R/telephone-700.png" style="width: 18px; height: 18px;" width="18" height="18">
+                          </td>
+                          <td style="display: inline-block; font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 14px; color: #282C2E; text-decoration-line: none">088 - 7 747 700</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tr>
+                          <td height="20px" style="line-height:0;height:20px;"></td>
+                        </tr>
+                        <tr>
+                          <td height="1" style="background: #E5EEF6; padding:0">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="19px" style="line-height:0;height:19px;"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="cta" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td style="padding: 4px 0 8px 0">
+                            <table id="vd-cta-link" cellpadding=0 cellspacing=0 border=0>
+                              <tr>
+                                <td style="padding: 0 8px 0 0">
+                                  <img src="https://i.ibb.co/Nr2ZtJy/megaphone.png" style="width: 18px; height: 18px;" width="18" height="18">
+                                </td>
+                                <td style="font-family: 'Helvetica'; font-style: normal; font-weight: 700; font-size: 13px; line-height: 14px; color: #282C2E;">We are hiring! <a href="https://"
+                                    style="font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 13px; line-height: 14px; text-decoration-line: underline; color: #37B0F2;">Product Owner Ecommerce</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td height="16px" style="line-height:0;height:16px;"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="company" style="display: inline-block; background: #FFE641; padding: 20px 16px 12px 16px;" cellpadding=0 cellspacing=0 border=0 width=100%>
+                        <tr>
+                          <td>
+                            <table cellpadding=0 cellspacing=0 border=0>
+                              <tr>
+                                <td style="padding: 0" colspan=2>
+                                  <a href="https://www.vakantiediscounter.nl/"><img src="https://i.ibb.co/1KtqrfS/vakantiediscounter.png" style="width: 128px; height: 42px;" width="128" height="42"></a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="padding: 16px 20px 16px 0; font-family: 'Helvetica'; font-style: normal; font-weight: 400; font-size: 12px; line-height: 14px; text-decoration-line: none; color: #92731A;">
+                                  Suikersilo-West 41<br />1165 MS Halfweg</a></td>
+                                <td style="padding: 0 14px 0 0">
+                                  <table cellpadding=0 cellspacing=0 border=0>
+                                    <tr>
+                                      <td style="padding: 0 4px">
+                                        <a href="https://nl.linkedin.com/company/vakantiediscounter" style=""><img alt="LinkedIn" src="https://i.ibb.co/bb6byzy/linkedin.png" style="width: 18px; height: 18px;" width="18" height="18"></a>
+                                      </td>
+                                      <td style="padding: 0 4px">
+                                        <a href="https://www.instagram.com/vakantiediscounter/" style=""><img alt="Instagram" src="https://i.ibb.co/vdyGLFp/instagram.png" style="width: 18px; height: 18px;" width="18" height="18"></a>
+                                      </td>
+                                      <td style="padding: 0 4px">
+                                        <a href="https://www.facebook.com/vakantiediscounter/" style=""><img alt="Facebook" src="https://i.ibb.co/HNxsf8R/facebook.png" style="width: 18px; height: 18px;" width="18" height="18"></a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td style="padding: 0">
+                                  <table cellpadding=0 cellspacing=0 border=0>
+                                    <tr>
+                                      <td style="padding: 0 4px">
+                                        <a alt="ANVR" href="https://www.anvr.nl/anvrleden/detail.aspx?nummer=3072" style=""><img alt="ANVR" src="https://i.ibb.co/WcRsWZN/anvr.png" style="width: 24px; height: 24px;" width="24" height="24"></a>
+                                      </td>
+                                      <td style="padding: 0 0 0 4px">
+                                        <a alt="SGR" href="https://www.sgr.nl/aangesloten-reisorganisaties/vakantiediscounter/" style=""><img alt="SGR" src="https://i.ibb.co/37myF08/sgr.png" style="width: 24px; height: 24px;" width="24" height="24"></a>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- END SIGNATURE -->
+              </div>
+                <!-- END SIGNATURE PREVIEW -->
+
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p class="break">&nbsp;</p>
+
+                <h2>3. Copy your signature</h2>
+                <p>&nbsp;</p>
+                <p>Press the button below to copy the signature to your clipboard.</p>
+
+                <div class="row clearfix button_center">
+                  <input id="formSubmit" type="button" value="Copy signature to clipboard" class="primary btn">
+                </div>
+                <p>&nbsp;</p>
+                <p class="break">&nbsp;</p>
+
+                <h2>4. Install your signature in Outlook</h2>
+                <p>&nbsp;</p>
+                <p>Which version of Outlook are you using?</p>
+
+                <div class="row clearfix">
+                  <div class="left"><dt>Version</dt></div>
+                  <div class="right">
+                    <select data-required="picklist" name="questiontopic" id="questiontopic" class="additionalFormFields wSelect-el">
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/3zDdR9k/select-windows.png" data-form="complaint_comment">Outlook for Windows</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/YjwdK60/select-outlook-web.png" data-form="complaint_comment">Outlook Web 365</option>
+                      <option value="Wel een boeking" data-icon="https://i.ibb.co/MPhb8sL/select-macos.png" data-form="complaint_comment">Outlook for macOS</option>
+                    </select>
+                  </div>
+                </div>
+
+                <p>&nbsp;</p>
+                <ol>
+                  <li style="list-style-position: inside; list-style-type: decimal; margin-bottom:1rem;">Open a new email message.</li>
+                  <li style="list-style-position: inside; list-style-type: decimal; margin-bottom:1rem;">On the Message menu, select Signature > Signatures.
+                    <br><br>
+  Depending on the size of your Outlook window and whether you're composing a new email message or a reply or forward, the Message menu and the Signature button might be in two different locations.  <br>  <br>
+                  <img src="https://support.content.office.net/en-us/media/f8f6b62a-56d3-48bc-8a82-4b59c956a40a.png"></li>
+                </ol>
+
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <section class="trust">
+      <div class="content">
+        <article class="trust-pillar trust-lists">
+          <div class="trust-pillar-bottom">
+            <p>Veilig aangesloten bij:</p>
+            <ul class="comfort-icons">
+              <li>
+                <a target="_blank" class="comfort-icon anvr" href="https://www.vakantiediscounter.nl/service/aangesloten/">ANVR</a>
+              </li>
+              <li>
+                <a target="_blank" class="comfort-icon sgr" href="https://www.vakantiediscounter.nl/service/aangesloten/">SGR</a>
+              </li>
+              <li><a class="comfort-icon ideal">iDEAL</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="trust-pillar trust-comfort">
+          <div class="trust-pillar-bottom">
+            <div class="branding">
+              <article class="logo">dé VakantieDiscounter</article>
+              <article class="payoff">Goedkoper kan niet!</article>
+            </div>
+          </div>
+        </article>
+        <article class="trust-pillar trust-report">
+          <div class="trust-pillar-bottom">
+            <a href="https://nl.trustpilot.com/review/www.vakantiediscounter.nl" target="_blank" class="review-link">
+              <img src="files/88626a5b-8c55-46b0-9927-6de513104281.png" alt="Trust Pilot">
+
+
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class=""></footer>
+
+    <script src="files/wSelect.min"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        var files = [];
+
+        // Init wSelect
+        $("select").wSelect();
+
+        // Form optional fields
+        $(".additionalFormFields").on("change", optionalFields);
+
+        // Clear file
+        $(".clear_file").on("click", function() {
+          // Get file remove data
+          var newFiles = [];
+          var file = $(this).attr("data-file");
+          var previewID = $(this).attr("data-preview");
+
+          // Clear file from UI
+          $("#" + file).val("");
+          $("#" + file).addClass("show");
+          $("#" + previewID + " .file_name").val("");
+          $("#" + previewID + " .file_content").val("");
+          $("#" + previewID + " .file_type").val("");
+          $("#" + previewID + " .file_extension").val("");
+          $("#" + previewID + " .file_document").removeClass("show");
+          $("#" + previewID + " img").removeClass("show");
+          $("#" + previewID + " img").attr("src", "");
+          $("#" + previewID + " .file_document .document_name").html("");
+          $("#" + previewID + " .file_upload_message").html("");
+          $(this).removeClass("show");
+
+          // Create new file array
+          for (var i = 0; i < files.length; i++) {
+            var fileObj = files[i];
+            if (fileObj.field != file) {
+              newFiles.push(files[i]);
+            }
+          }
+
+          // Overwrite file array
+          files = newFiles;
+        });
+
+        // Field listeners
+        $("#questiontopic").on('change', function(event){
+            // Toggle required booking
+            if(event.target.value === 'Wel een boeking'){
+                $('#reservationnumber').attr('data-required', 'text');
+                $('#reservationnumber-label').text('Res. nummer *');
+
+            }else{
+                $('#reservationnumber').attr('data-required', 'none');
+                $('#reservationnumber-label').text('Res. nummer');
+            }
+        });
+
+        // Form submit
+        $("#formSubmit").on("click", function() {
+          var getdepdate =
+            "https://cloud.e.vakantiediscounter.nl/GetDepartureDatejs";
+          var createCase =
+            "https://vakantiediscounter.secure.force.com/services/apexrest/complaints";
+          var uploadFile =
+            "https://vakantiediscounter.secure.force.com/services/apexrest/complaintFiles";
+
+          var form = $("form");
+          var checkForm = validateForm(form);
+
+          if (checkForm == true) {
+            // Dispaly processing
+            $("main.form_view").removeClass("show_view");
+            $("#form_processing").addClass("show_view");
+
+            // Form submit status
+            var errorMsg = "";
+            var hasErrors = false;
+
+            // Get form data
+            var formLocation = form.attr("action");
+            var resNumber = $('input[name="reservationnumber"]', form).val();
+            var commentComplaint = $(
+              'textarea[name="complaint_comment"]',
+              form
+            ).val();
+            var commentCalamity = $(
+              'textarea[name="complaint_calamity_comment"]',
+              form
+            ).val();
+            var caseComment = "";
+            var complaintType = $('select[name="complaint"]', form).val();
+            var departureDateVal = $('input[name="departuredate"]', form).val();
+            var phoneNumber = $('input[name="phone"]', form).val();
+            var depdate = "";
+
+            var renum = resNumber
+
+            // Concatinate case comments
+            if (resNumber == "") {
+              resNumber = "onbekend";
+            }
+            caseComment =
+              caseComment + "Reserveringsnummer: " + resNumber + "\n";
+
+            if (phoneNumber == "") {
+              phoneNumber = "onbekend";
+            }
+            if (phoneNumber != "") {
+              caseComment =
+                caseComment +
+                "-------------------------------------------------\n";
+              caseComment =
+                caseComment + "Telefoonnummer: " + phoneNumber + "\n";
+            }
+
+            if (departureDateVal != "") {
+              caseComment =
+                caseComment +
+                "-------------------------------------------------\n";
+              caseComment =
+                caseComment + "Vertrekdatum: " + departureDateVal + "\n";
+            }
+
+            if (commentComplaint != "") {
+              caseComment =
+                caseComment +
+                "-------------------------------------------------\n";
+              caseComment =
+                caseComment + "Vraag: " + commentComplaint + "\n";
+            }
+
+
+            $.ajax({
+              url: getdepdate,
+              dataType: "json",
+              crossDomain: true,
+              type: "get",
+              contentType: "application/json",
+              data: { resid: renum},
+              success: function(data) {
+                console.log("============= SUCCESS =============");
+                console.log(data);
+
+                // Form Departure date to subject
+                var DepartureDateSFSC = null;
+
+                if (data.departuredate != "") {
+                  complaintType = data.departuredate + "-" + complaintType;
+                  DepartureDateSFSC = data.departuredate;
+                } else if (departureDateVal != "") {
+                  complaintType = departureDateVal + "-" + complaintType;
+                  DepartureDateSFSC = departureDateVal;
+                }
+
+                // Case fields
+                var formFields = {
+                  firstName: $('input[name="firstname"]', form).val(),
+                  lastName: $('input[name="lastname"]', form).val(),
+                  emailAddress: $('input[name="emailaddress"]', form).val(),
+                  complaintType: complaintType,
+                  departureDate: DepartureDateSFSC,
+                  caseOrigin: 'klantenservice Vakantiediscounter',
+                  formType: 'sfmc_contactformulier',
+                  discounterComplaintType: null,
+                  complaintInfo: caseComment
+                };
+
+                $.ajax({
+                  url: createCase,
+                  dataType: "json",
+                  crossDomain: true,
+                  type: "post",
+                  contentType: "application/json",
+
+                  data: JSON.stringify(formFields),
+                  processData: false,
+                  success: function(data) {
+                    // Debug log
+                    console.log("============= CREATE CASE =============");
+                    console.log(data);
+
+                    // Handle case create result
+                    var CaseID = data.caseId;
+
+                    // Upload files after case is created
+                    if (data.statusCode == 200) {
+                      // Check if there are any files
+                      if (files.length > 0) {
+                        // Loop files
+                        for (var i = 0; i < files.length; i++) {
+                          // Get file data
+                          var fileData = {
+                            caseId: CaseID,
+                            files: [files[i]]
+                          };
+
+                          // Upload the file
+                          $.ajax({
+                            url: uploadFile,
+                            dataType: "json",
+                            type: "post",
+                            contentType: "application/json",
+                            data: JSON.stringify(fileData),
+                            processData: false,
+                            success: function(data) {
+                              // Debug log
+                              console.log(
+                                "============= UPLOAD FILE ============="
+                              );
+                              console.log(data);
+
+                              // Error uploading files
+                              if (data.statusCode != 200) {
+                                hasErrors = true;
+
+                                // Display error message
+                                $("#form_processing p").html(
+                                  "<strong>Het versturen van het formulier is helaas niet gelukt.</strong><br><br>Foutmelding: " +
+                                    data.message
+                                );
+                              }
+
+                              // Check if we're done uploading all files
+                              if (files.length == i) {
+                                // Check if there are any errors
+                                if (hasErrors == false) {
+                                  // Dispaly thank you
+                                  $("main.form_view").removeClass("show_view");
+                                  $("#form_thank_you").addClass("show_view");
+                                }
+                              }
+                            },
+                            error: function(data) {
+                              console.log("============= ERROR =============");
+                              console.log(data);
+
+                              // Display error message
+                              $("#form_processing p").html(
+                                "<strong>Het versturen van het formulier is helaas niet gelukt.</strong>"
+                              );
+                            }
+                          });
+                        }
+                      } else {
+                        // Dispaly thank you
+                        $("main.form_view").removeClass("show_view");
+                        $("#form_thank_you").addClass("show_view");
+                      }
+                    } else {
+                      // Error creating case
+                      hasErrors = true;
+
+                      // Display error message
+                      $("#form_processing p").html(
+                        "<strong>Het versturen van het formulier is helaas niet gelukt.</strong><br><br>Foutmelding: " +
+                          data.message
+                      );
+                    }
+                  },
+                  error: function(data) {
+                    console.log("============= ERROR 1 =============");
+                    console.log(data);
+
+                    // Display error message
+                    $("#form_processing p").html(
+                      "<strong>Het versturen van het formulier is helaas niet gelukt.</strong>"
+                    );
+                  }
+                });
+              },
+              error: function(data) {
+                console.log("============= ERROR 2 =============");
+                console.log(data);
+
+                // Display error message
+                $("#form_processing p").html(
+                  "<strong>Het versturen van uw klacht is helaas niet gelukt.</strong>"
+                );
+              }
+            });
+          } else {
+            // Move to first error
+            $('.error').first().focus()
+            console.log("Form incomplete!");
+          }
+        });
+
+        function optionalFields() {
+          // Check if any optional fields need to be displayed
+          var optionField = $(this).val();
+          var optionShow = $('option[value="' + optionField + '"]', this).attr(
+            "data-form"
+          );
+          var optionShow_ar = optionShow.split(",");
+
+          // Search related option fields
+          $("option", this).each(function() {
+            var optionHide = $(this).attr("data-form");
+            $("#" + optionHide).removeClass("show");
+          });
+
+          // Activate the related optional field
+          for (var i = 0; i < optionShow_ar.length; i++) {
+            $("#" + optionShow_ar[i]).addClass("show");
+          }
+        }
+
+        function validateForm(form) {
+          var validForm = true;
+
+          $("textarea, input, select", form).each(function() {
+            var isRequired = $(this).attr("data-required");
+            var fieldVal = $(this).val();
+
+            if (isRequired == "text" && (fieldVal.length == 0 || fieldVal == "") ){
+              // Invalid text
+              validForm = false;
+              $(this).addClass("error");
+
+            } else if (isRequired == "email" && validateEmail(fieldVal) != true ){
+              // Invalid Email
+              validForm = false;
+              $(this).addClass("error");
+
+            } else if (isRequired == 'picklist' && (fieldVal.length == 0 || fieldVal == "")){
+              // Invalid picklist
+              validForm = false;
+              $(this).parent().find('.wSelect-theme-classic').addClass('error')
+
+            }else{
+              $(this).removeClass("error");
+              $(this).parent().find('.wSelect-theme-classic').removeClass('error')
+            }
+          });
+
+          return validForm;
+        }
+
+        function validateEmail(email) {
+          var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(email);
+        }
+
+        function fileUploadHandler() {
+          // Check if file is selected
+          if (this.files && this.files[0]) {
+            // Field ID
+            var fieldID = $(this).attr("id");
+
+
+            // Show remove button
+            $('.clear_file[data-file="' + fieldID + '"]').addClass("show");
+
+            // Preview container
+            var previewID = $(this).attr("data-preview");
+
+            // Get file data
+            var fileName = this.files[0].name;
+            var fileSize = this.files[0].size;
+            fileSize = fileSize / 1024 / 1024;
+
+            // File extension
+            var file_ar = fileName.split(".");
+            var fileExtension = file_ar[file_ar.length - 1].toLowerCase();
+
+            // Validate file
+            if (
+              fileSize <= 2.1 &&
+              (fileExtension == "jpeg" ||
+                fileExtension == "jpg" ||
+                fileExtension == "png" ||
+                fileExtension == "pdf" ||
+                fileExtension == "doc" ||
+                fileExtension == "docx")
+            ) {
+              // Init file reader
+              var file = new FileReader();
+
+              // Load file data
+              file.addEventListener("load", function(e) {
+                // Reset error
+                $("#" + previewID + " .file_upload_message").html("");
+
+                // Get the file type
+                var fileType = e.target.result.split(";");
+                fileType = fileType[0].split(":");
+                fileType = fileType[1].split("/");
+                fileType = fileType[0];
+
+                // Get raw file data
+                var rawFileData = e.target.result.split(",");
+                rawFileData = rawFileData[1];
+
+                // Collect raw file data
+                $("#" + previewID + " .file_name").val(fileName);
+                $("#" + previewID + " .file_content").val(rawFileData);
+                $("#" + previewID + " .file_type").val(fileType);
+                $("#" + previewID + " .file_extension").val(fileExtension);
+
+                // Add file data to array
+                files.push({
+                  fileName: fileName,
+                  fileData: rawFileData,
+                  fileExtension: fileExtension,
+                  field: fieldID
+                });
+
+                console.log(files);
+
+                // Set image preview
+                if (fileType == "image") {
+                  $("#" + previewID + " img").addClass("show");
+                  $("#" + previewID + " img").attr("src", e.target.result);
+
+                  // Document preview
+                } else {
+                  $("#" + previewID + " .file_document").addClass("show");
+                  $("#" + previewID + " .file_document .document_name").html(
+                    fileName
+                  );
+                }
+
+                // Hide input field
+                $("#" + fieldID).removeClass("show");
+              });
+
+              // Read binary data
+              file.readAsDataURL(this.files[0]);
+            } else {
+              // Error element
+              var errElm = $("#" + previewID + " .file_upload_message");
+
+              // hide remove button
+              $("#" + previewID + " .clear_file").removeClass("show");
+
+              if (fileSize > 2.1) {
+                // Error message file size
+                errElm.html(
+                  "Bestand is " +
+                    fileSize.toFixed(1) +
+                    " MB groot. Maximaal 2 MB is toegestaan. Selecteer een ander bestand"
+                );
+              } else if (
+                fileExtension != "jpeg" &&
+                fileExtension != "jpg" &&
+                fileExtension != "png" &&
+                fileExtension != "docx" &&
+                fileExtension != "doc" &&
+                fileExtension != "pdf"
+              ) {
+                // Error message file tuype
+                errElm.html(
+                  "Alleen JPG, PNG, DOCX en PDF bestanden zijn toegestaan. Selecteer een ander bestand"
+                );
+              } else {
+                // Reset error message
+                errElm.html("");
+              }
+            }
+
+          }
+        }
+
+        // Set upload handler to file input
+        document
+          .getElementById("file_1_input")
+          .addEventListener("change", fileUploadHandler);
+        document
+          .getElementById("file_2_input")
+          .addEventListener("change", fileUploadHandler);
+        document
+          .getElementById("file_3_input")
+          .addEventListener("change", fileUploadHandler);
+      });
+    </script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

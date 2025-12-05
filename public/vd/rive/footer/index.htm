@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Rive Animation</title>
+  <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+</head>
+<body>
+  <canvas id="riveCanvas" style="width:1440px; height:1800px;"></canvas>
+
+  <script>
+    const canvas = document.getElementById('riveCanvas');
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = 1440 * dpr;
+    canvas.height = 1800 * dpr;
+
+    new rive.Rive({
+      src: 'footer.riv',
+      canvas: canvas,
+      autoplay: true,
+      devicePixelRatio: dpr
+    });
+  </script>
+</body>
+</html>

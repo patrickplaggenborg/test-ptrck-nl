@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Footer</title>
+  <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .footer-container {
+      position: relative;
+      width: 1440px;
+      height: 1940px;
+      background-image: url('footer.jpg');
+      background-size: 1440px 1940px;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0 auto;
+    }
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      .footer-container {
+        background-size: 1440px 1940px; /* Keep display size consistent on retina */
+      }
+    }
+    #riveCanvas {
+      position: absolute;
+      left: calc(50% - 497px);
+      top: 1594px;
+      transform: translateX(-50%) scaleX(-1) rotate(-12deg) scale(0.8396946565);
+    }
+  </style>
+</head>
+<body>
+  <div class="footer-container">
+    <canvas id="riveCanvas" style="width:260px; height:260px;"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('riveCanvas');
+    if (!canvas) {
+      throw new Error("No canvas element found");
+    }
+
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = 260 * dpr;
+    canvas.height = 260 * dpr;
+
+    const riveInstance = new rive.Rive({
+      src: 'mario-circle.riv',
+      canvas: canvas,
+      autoplay: true,
+      stateMachines: 'Mario',
+      layout: new rive.Layout({
+        fit: rive.Fit.Cover,
+        alignment: rive.Alignment.Center
+      }),
+      devicePixelRatio: dpr,
+      onLoad: () => {
+        riveInstance.resizeDrawingSurfaceToCanvas();
+        
+        try {
+          // Get the inputs for the Mario state machine
+          const inputs = riveInstance.stateMachineInputs('Mario');
+          console.log('Available inputs:', inputs);
+          
+          // Find our axis inputs
+          const xAxisInput = inputs.find(input => input.name === 'xAxis');
+          const yAxisInput = inputs.find(input => input.name === 'yAxis');
+          
+          if (!xAxisInput || !yAxisInput) {
+            console.error('Could not find axis inputs');
+            return;
+          }
+
+          console.log('Found inputs:', {
+            xAxis: xAxisInput,
+            yAxis: yAxisInput
+          });
+
+          // Mouse move handler
+          function handleMouseMove(event) {
+            // Calculate position (0-100 range)
+            const xPercent = (event.clientX / window.innerWidth) * 100;
+            const yPercent = (event.clientY / window.innerHeight) * 100;
+            
+            // Update the inputs - invert x-axis to match mirrored animation
+            xAxisInput.value = 100 - xPercent;
+            yAxisInput.value = yPercent;
+
+            console.log('Setting position:', { x: 100 - xPercent, y: yPercent });
+          }
+
+          // Listen for mouse movement anywhere on the document
+          document.addEventListener('mousemove', handleMouseMove);
+
+          // Handle window resize
+          function computeSize() {
+            riveInstance.resizeDrawingSurfaceToCanvas();
+          }
+          
+          window.onresize = computeSize;
+          window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+            .addEventListener('change', computeSize);
+            
+        } catch (error) {
+          console.error('Error setting up Rive animation:', error);
+          console.log('Error details:', error);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

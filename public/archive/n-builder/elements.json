@@ -1,0 +1,163 @@
+var _Elements = {"elements": {
+	"Home Sections": [
+		{"url":"elements/app-home-1-gradient-overlay.html","height": 849, "thumbnail":"thumbnails/app-home-1-gradient-overlay.png"},
+		{"url":"elements/app-home-1-polygon-bg.html","height": 849, "thumbnail":"thumbnails/app-home-1-polygon-bg.png"},
+		{"url":"elements/app-home-1-color-overlay.html","height": 849, "thumbnail":"thumbnails/app-home-1-color-overlay.png"},
+		{"url":"elements/app-home-1-video-bg.html","height": 849, "thumbnail":"thumbnails/app-home-1-video-bg.png"},
+		{"url":"elements/app-home-2-color-overlay.html","height": 931, "thumbnail":"thumbnails/app-home-2-color-overlay.png"},
+		{"url":"elements/app-home-2-gradient-overlay.html","height": 931, "thumbnail":"thumbnails/app-home-2-gradient-overlay.png"},
+		{"url":"elements/app-home-2-polygon-bg.html","height": 931, "thumbnail":"thumbnails/app-home-2-polygon-bg.png"},
+		{"url":"elements/app-home-2-video-bg.html","height": 931, "thumbnail":"thumbnails/app-home-2-video-bg.png"},
+		{"url":"elements/app-home-3-color-overlay.html","height": 845, "thumbnail":"thumbnails/app-home-3-color-overlay.png"},
+		{"url":"elements/app-home-3-gradient-overlay.html","height": 845, "thumbnail":"thumbnails/app-home-3-gradient-overlay.png"},
+		{"url":"elements/app-home-3-polygon-bg.html","height": 845, "thumbnail":"thumbnails/app-home-3-polygon-bg.png"},
+		{"url":"elements/app-home-3-video-bg.html","height": 845, "thumbnail":"thumbnails/app-home-3-video-bg.png"},
+		{"url":"elements/book-home-color-overlay.html","height": 850, "thumbnail":"thumbnails/book-home-color-overlay.png"},
+		{"url":"elements/book-home-gradient-overlay.html","height": 850, "thumbnail":"thumbnails/book-home-gradient-overlay.png"},
+		{"url":"elements/book-home-polygon-bg.html","height": 850, "thumbnail":"thumbnails/book-home-polygon-bg.png"},
+		{"url":"elements/book-home-video-bg.html","height": 850, "thumbnail":"thumbnails/book-home-video-bg.png"},
+		{"url":"elements/elearning-home-color-overlay.html","height": 831, "thumbnail":"thumbnails/elearning-home-color-overlay.png"},
+		{"url":"elements/elearning-home-gradient-overlay.html","height": 831, "thumbnail":"thumbnails/elearning-home-gradient-overlay.png"},
+		{"url":"elements/elearning-home-polygon-bg.html","height": 831, "thumbnail":"thumbnails/elearning-home-polygon-bg.png"},
+		{"url":"elements/event-home-1-color-overlay.html","height": 851, "thumbnail":"thumbnails/event-home-1-color-overlay.png"},
+		{"url":"elements/event-home-1-gradient-overlay.html","height": 851, "thumbnail":"thumbnails/event-home-1-gradient-overlay.png"},
+		{"url":"elements/event-home-1-polygon-bg.html","height": 851, "thumbnail":"thumbnails/event-home-1-polygon-bg.png"},
+		{"url":"elements/event-home-1-video-bg.html","height": 851, "thumbnail":"thumbnails/event-home-1-video-bg.png"},
+		{"url":"elements/event-home-2-color-overlay.html","height": 774, "thumbnail":"thumbnails/event-home-2-color-overlay.png"},
+		{"url":"elements/event-home-2-gradient-overlay.html","height": 774, "thumbnail":"thumbnails/event-home-2-gradient-overlay.png"},
+		{"url":"elements/event-home-2-polygon-bg.html","height": 774, "thumbnail":"thumbnails/event-home-2-polygon-bg.png"},
+		{"url":"elements/event-home-2-video-bg.html","height": 774, "thumbnail":"thumbnails/event-home-2-video-bg.png"},
+		{"url":"elements/photography-home-color-overlay.html","height": 926, "thumbnail":"thumbnails/photography-home-color-overlay.png"},
+		{"url":"elements/photography-home-gradient-overlay.html","height": 926, "thumbnail":"thumbnails/photography-home-gradient-overlay.png"},
+		{"url":"elements/photography-home-polygon-bg.html","height": 926, "thumbnail":"thumbnails/photography-home-polygon-bg.png"},
+		{"url":"elements/photography-home-video-bg.html","height": 926, "thumbnail":"thumbnails/photography-home-video-bg.png"},
+		{"url":"elements/resraurant-home.html","height": 674, "thumbnail":"thumbnails/resraurant-home.png"},
+	],
+
+	"Features": [
+		{"url": "elements/app-features-1.html", "height": 951, "thumbnail": "thumbnails/app-features-1.png"},
+		{"url": "elements/app-features-2-1.html", "height": 825, "thumbnail": "thumbnails/app-features-2-1.png"},
+		{"url": "elements/app-features-2-2.html", "height": 825, "thumbnail": "thumbnails/app-features-2-2.png"},
+		{"url": "elements/app-features-3.html", "height": 1014, "thumbnail": "thumbnails/app-features-3.png"},
+		{"url": "elements/app-features-4.html", "height": 1055, "thumbnail": "thumbnails/app-features-4.png", "sandbox": true, "loaderFunction": "featureSlide"},
+		{"url": "elements/app-features-5-1.html", "height": 875, "thumbnail": "thumbnails/app-features-5-1.png"},
+		{"url": "elements/app-features-5-2.html", "height": 875, "thumbnail": "thumbnails/app-features-5-2.png"},
+		{"url": "elements/elearning-features.html", "height": 452, "thumbnail": "thumbnails/elearning-features.png"},
+		{"url": "elements/photography-features.html", "height": 774, "thumbnail": "thumbnails/photography-features.png"},
+		{"url": "elements/restaurant-features-1.html", "height": 1578, "thumbnail": "thumbnails/restaurant-features-1.png"},
+		{"url": "elements/restaurant-features-2.html", "height": 1333, "thumbnail": "thumbnails/restaurant-features-2.png"},
+		{"url": "elements/restaurant-menu.html", "height": 951, "thumbnail": "thumbnails/restaurant-menu.png"},
+
+	],
+
+	"Descriptions" : [
+		{"url": "elements/app-description-1-1.html", "height": 775, "thumbnail": "thumbnails/app-description-1-1.png"},
+		{"url": "elements/app-description-1-2.html", "height": 775, "thumbnail": "thumbnails/app-description-1-2.png"},
+		{"url": "elements/app-description-2-1.html", "height": 775, "thumbnail": "thumbnails/app-description-2-1.png"},
+		{"url": "elements/app-description-2-2.html", "height": 775, "thumbnail": "thumbnails/app-description-2-2.png"},
+		{"url": "elements/app-description-3-1.html", "height": 509, "thumbnail": "thumbnails/app-description-3-1.png"},
+		{"url": "elements/app-description-3-2.html", "height": 509, "thumbnail": "thumbnails/app-description-3-2.png"},
+		{"url": "elements/book-description-1-1.html", "height": 541, "thumbnail": "thumbnails/book-description-1-1.png"},
+		{"url": "elements/book-description-1-2.html", "height": 541, "thumbnail": "thumbnails/book-description-1-2.png"},
+		{"url": "elements/about-authors.html", "height": 950, "thumbnail": "thumbnails/about-authors.png"},
+		{"url": "elements/about-conference.html", "height": 708, "thumbnail": "thumbnails/about-conference.png"},
+		{"url": "elements/course-description.html", "height": 933, "thumbnail": "thumbnails/course-description.png", "sandbox": true, "loaderFunction": "courseSlide"},
+	],
+
+	"Small Sections": [
+		{"url": "elements/small-content-1.html", "height": 303, "thumbnail": "thumbnails/small-content-1.png"},
+		{"url": "elements/small-content-2.html", "height": 224, "thumbnail": "thumbnails/small-content-2.png"},
+		{"url": "elements/small-features.html", "height": 301, "thumbnail": "thumbnails/small-features.png"},
+		{"url": "elements/small-review.html", "height": 199, "thumbnail": "thumbnails/small-review.png"},
+	],
+
+	"Screenshots": [
+		{"url": "elements/screenshots-1.html", "height": 992, "thumbnail": "thumbnails/screenshots-1.png", "sandbox": true, "loaderFunction": "screenShot_1"},
+		{"url": "elements/screenshots-2.html", "height": 968, "thumbnail": "thumbnails/screenshots-2.png"},
+	],
+
+	"The Team": [
+		{"url": "elements/course-instructors.html", "height": 1050, "thumbnail": "thumbnails/course-instructors.png"},
+		{"url": "elements/speakers-1.html", "height": 1407, "thumbnail": "thumbnails/speakers-1.png"},
+		{"url": "elements/speakers-2.html", "height": 1202, "thumbnail": "thumbnails/speakers-2.png"},
+	],
+
+	"FAQs": [
+		{"url": "elements/faqs-1.html", "height": 870, "thumbnail": "thumbnails/faqs-1.png"},
+		{"url": "elements/faqs-2.html", "height": 904, "thumbnail": "thumbnails/faqs-2.png"},
+		{"url": "elements/faqs-3.html", "height": 685, "thumbnail": "thumbnails/faqs-3.png"},
+	],
+
+	"Downloads": [
+		{"url": "elements/download-app-1.html", "height": 1018, "thumbnail": "thumbnails/download-app-1.png"},
+		{"url": "elements/download-app-2.html", "height": 510, "thumbnail": "thumbnails/download-app-2.png"},
+		{"url": "elements/download-app-3.html", "height": 1023, "thumbnail": "thumbnails/download-app-3.png"},
+		{"url": "elements/download-book.html", "height": 1018, "thumbnail": "thumbnails/download-book.png"},
+	],
+
+	"Gallery": [
+		{"url": "elements/portfolio.html", "height": 1079, "thumbnail": "thumbnails/portfolio.png"},
+		{"url": "elements/recap-gallery-color-overlay.html", "height": 774, "thumbnail": "thumbnails/recap-gallery-color-overlay.png"},
+		{"url": "elements/recap-gallery-gradient-overlay.html", "height": 774, "thumbnail": "thumbnails/recap-gallery-gradient-overlay.png"},
+		{"url": "elements/recap-gallery-polygon-bg.html", "height": 774, "thumbnail": "thumbnails/recap-gallery-polygon-bg.png"},
+	],
+
+	"Pricing Table": [
+		{"url": "elements/pricing-table-1.html", "height": 946, "thumbnail": "thumbnails/pricing-table-1.png"},
+		{"url": "elements/pricing-table-2.html", "height": 1002, "thumbnail": "thumbnails/pricing-table-2.png"},
+		{"url": "elements/pricing-table-3.html", "height": 820, "thumbnail": "thumbnails/pricing-table-3.png"},
+		{"url": "elements/pricing-table-4.html", "height": 824, "thumbnail": "thumbnails/pricing-table-4.png"},
+	],
+
+	"Testimonials": [
+		{"url": "elements/testimonials-1-color-overlay.html", "height": 766, "thumbnail": "thumbnails/testimonials-1-color-overlay.png"},
+
+		{"url": "elements/testimonials-1-gradient-overlay.html", "height": 766, "thumbnail": "thumbnails/testimonials-1-gradient-overlay.png", "sandbox":true, "loaderFunction":"testimonial_build_1"},
+
+		{"url": "elements/testimonials-1-polygon-bg.html", "height": 766, "thumbnail": "thumbnails/testimonials-1-polygon-bg.png"},
+
+		{"url": "elements/testimonials-2-color-overlay.html", "height": 689, "thumbnail": "thumbnails/testimonials-2-color-overlay.png"},
+
+		{"url": "elements/testimonials-2-gradient-overlay.html", "height": 689, "thumbnail": "thumbnails/testimonials-2-gradient-overlay.png"},
+
+		{"url": "elements/testimonials-2-polygon-bg.html", "height": 689, "thumbnail": "thumbnails/testimonials-2-polygon-bg.png"},
+		
+		{"url": "elements/testimonials-3.html", "height": 803, "thumbnail": "thumbnails/testimonials-3.png"},
+		{"url": "elements/testimonials-4.html", "height": 814, "thumbnail": "thumbnails/testimonials-4.png"},
+		{"url": "elements/testimonials-5.html", "height": 649, "thumbnail": "thumbnails/testimonials-5.png"},
+	],
+
+	"Forms": [
+		{"url": "elements/footer-1.html", "height": 948, "thumbnail": "thumbnails/contact-form-popup.png"},
+		{"url": "elements/contact-us-1.html", "height": 1025, "thumbnail": "thumbnails/contact-us-1.png"},
+		{"url": "elements/contact-us-2.html", "height": 597, "thumbnail": "thumbnails/contact-us-2.png"},
+		{"url": "elements/join-us-color-overlay.html", "height": 601, "thumbnail": "thumbnails/join-us-color-overlay.png"},
+		{"url": "elements/join-us-gradient-overlay.html", "height": 601, "thumbnail": "thumbnails/join-us-gradient-overlay.png"},
+		{"url": "elements/join-us-polygon-bg.html", "height": 601, "thumbnail": "thumbnails/join-us-polygon-bg.png"},
+		{"url": "elements/resraurant-order.html", "height": 884, "thumbnail": "thumbnails/resraurant-order.png"},
+		{"url": "elements/ticket-booking-1.html", "height": 914, "thumbnail": "thumbnails/ticket-booking-1.png"},
+		{"url": "elements/ticket-booking-2.html", "height": 734, "thumbnail": "thumbnails/ticket-booking-2.png"},
+	],
+
+	"Etc": [
+		{"url": "elements/schedule-1.html", "height": 1405, "thumbnail": "thumbnails/schedule-1.png"},
+		{"url": "elements/schedule-2.html", "height": 1418, "thumbnail": "thumbnails/schedule-2.png"},
+		{"url": "elements/sponsors-1.html", "height": 427, "thumbnail": "thumbnails/sponsors-1.png"},
+		{"url": "elements/sponsors-2-color-overlay.html", "height": 669, "thumbnail": "thumbnails/sponsors-2-color-overlay.png"},
+		{"url": "elements/sponsors-2-gradient-overlay.html", "height": 669, "thumbnail": "thumbnails/sponsors-2-gradient-overlay.png"},
+		{"url": "elements/sponsors-2-polygon-bg.html", "height": 669, "thumbnail": "thumbnails/sponsors-2-polygon-bg.png"},
+		{"url": "elements/the-video-1.html", "height": 1457, "thumbnail": "thumbnails/the-video-1.png"},
+		{"url": "elements/the-video-2.html", "height": 634, "thumbnail": "thumbnails/the-video-2.png"},
+	],
+
+	"Footers": [
+		{"url": "elements/footer-1.html", "height": 275, "thumbnail": "thumbnails/footer-1.png"},
+		{"url": "elements/footer-2.html", "height": 135, "thumbnail": "thumbnails/footer-2.png"},
+		{"url": "elements/footer-3.html", "height": 65, "thumbnail": "thumbnails/footer-3.png"},
+		{"url": "elements/footer-4.html", "height": 622, "thumbnail": "thumbnails/footer-4.png"},
+		{"url": "elements/footer-5.html", "height": 540, "thumbnail": "thumbnails/footer-5.png"},
+		{"url": "elements/cover-map.html", "height": 650, "thumbnail": "thumbnails/cover-map.png", "sandbox": true, "loaderFunction": "mapBig"},
+	]
+
+	}
+}

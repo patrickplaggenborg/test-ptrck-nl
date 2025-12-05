@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Scroll Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        
+        .section:first-child {
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section:nth-child(2) {
+            height: 2000px;
+        }
+
+        .section:nth-child(3) {
+            height: 400px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .section:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+        
+        .sidebar {
+            position: sticky;
+            bottom: 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            width: 200px;
+            height: 1170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .sticky-top {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sticky-bottom {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content {
+            margin: 20px 0;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .section-content {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="content">
+            <h1>Section 1</h1>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="sidebar">
+            <div class="sticky-top">top</div>
+            <div class="sticky-bottom">bottom</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="content">
+            <h1>Section 3</h1>
+            <p>The sticky header should only be visible in section 2.</p>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const section2 = document.querySelector('.section:nth-child(2)');
+
+        function logSidebarPosition() {
+            const sidebarRect = sidebar.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            console.log('Viewport height:', viewportHeight);
+            console.log('Sidebar top position:', sidebarRect.top);
+            console.log('Sidebar bottom position:', sidebarRect.bottom);
+        }
+
+        window.addEventListener('scroll', logSidebarPosition);
+    </script>
+</body>
+</html>

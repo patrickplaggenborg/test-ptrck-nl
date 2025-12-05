@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Rive Animation</title>
+  <script src="https://unpkg.com/@rive-app/canvas@latest"></script>
+</head>
+<body>
+  <canvas id="riveCanvas" style="width:400px; height:400px;"></canvas>
+
+  <script>
+    const canvas = document.getElementById('riveCanvas');
+    const dpr = window.devicePixelRatio || 1;
+
+    canvas.width = 400 * dpr;
+    canvas.height = 400 * dpr;
+
+    new rive.Rive({
+      src: 'mario.riv',
+      canvas: canvas,
+      autoplay: true,
+      stateMachines: 'Mario', // replace with your state machine's exact name
+      devicePixelRatio: dpr
+    });
+  </script>
+</body>
+</html>

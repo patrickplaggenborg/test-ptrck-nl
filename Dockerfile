@@ -16,6 +16,14 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
 # Suppress Apache warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+# Configure Apache to serve .htm files as directory indexes
+RUN echo "<Directory /var/www/html>" >> /etc/apache2/apache2.conf && \
+    echo "    DirectoryIndex index.html index.htm index.php" >> /etc/apache2/apache2.conf && \
+    echo "    Options Indexes FollowSymLinks" >> /etc/apache2/apache2.conf && \
+    echo "    AllowOverride All" >> /etc/apache2/apache2.conf && \
+    echo "    Require all granted" >> /etc/apache2/apache2.conf && \
+    echo "</Directory>" >> /etc/apache2/apache2.conf
+
 # Copy files (maintain local structure)
 COPY public/ /var/www/html/
 

@@ -1,7 +1,17 @@
 FROM php:8.2-apache
 
+# Install system dependencies required for PHP extensions
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    zlib1g-dev \
+    libwebp-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Install required PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql gd
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
+    && docker-php-ext-install mysqli pdo pdo_mysql gd
 
 # Suppress Apache warning
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf

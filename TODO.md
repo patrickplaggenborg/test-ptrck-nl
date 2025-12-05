@@ -15,8 +15,11 @@
 
 ## 🔄 In Progress
 
-- [ ] Initialize git repository
-- [ ] Push to GitHub (patrickplagdenborg/test-ptrck-nl)
+- [x] Initialize git repository
+- [x] Commit all files
+- [x] Set up GitHub remote
+- [ ] **Create repository on GitHub** (https://github.com/patrickplaggenborg/test-ptrck-nl)
+- [ ] Push to GitHub: `git push -u origin main`
 
 ## 📋 Post-Deployment Checklist
 

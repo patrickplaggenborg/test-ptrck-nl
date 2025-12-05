@@ -17,12 +17,10 @@ test-ptrck-nl/
 │   │   └── mapgenerator/    # Map generator utility
 │   ├── text/                # Text/image manipulation scripts
 │   └── vd/                  # Various design experiments
-├── private/                  # Config files OUTSIDE web root
-│   └── config/              # Configuration files
-├── sql/                      # Database files (if needed)
-├── docs/                     # Documentation
 ├── Dockerfile               # Container definition
-└── README.md                # This file
+├── .gitignore               # Git ignore rules
+├── README.md                # This file
+└── TODO.md                  # Migration checklist
 ```
 
 ## 🚀 Deployment

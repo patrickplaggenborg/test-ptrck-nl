@@ -21,10 +21,12 @@ else
     $data = curl_exec($ch);
     curl_close($ch);
 
-    $image = imagecreatefromstring($data);
-
-
-    echo 'typeof($image) = ' . (imageistruecolor($image) ? 'true color' : 'palette'), PHP_EOL;
+    $image = @imagecreatefromstring($data);
+    if ($image === false) {
+        error_log('Failed to create image from data');
+        http_response_code(400);
+        exit(0);
+    }
 
 
 

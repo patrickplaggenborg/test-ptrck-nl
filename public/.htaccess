@@ -1,0 +1,46 @@
+# Security Headers
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Prevent clickjacking
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection (legacy, but still useful)
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    
+    # Content Security Policy (adjust based on your needs)
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.voiceflow.com https://maps.googleapis.com https://*.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: http:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.voiceflow.com https://*.googleapis.com; frame-src 'self' https://*.voiceflow.com;"
+</IfModule>
+
+# Disable directory listing
+Options -Indexes +FollowSymLinks
+
+# Prevent access to sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|bak|old|tmp)$">
+    Require all denied
+</FilesMatch>
+
+# PHP Security Settings
+<IfModule mod_php8.c>
+    php_flag expose_php Off
+    php_flag allow_url_fopen Off
+    php_flag allow_url_include Off
+    php_value max_execution_time 30
+    php_value max_input_time 30
+    php_value memory_limit 128M
+    php_value post_max_size 8M
+    php_value upload_max_filesize 2M
+</IfModule>
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+

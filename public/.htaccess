@@ -44,3 +44,5 @@ Options -Indexes +FollowSymLinks
     Require all denied
 </FilesMatch>
 
+
+

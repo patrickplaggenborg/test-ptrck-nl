@@ -11,10 +11,9 @@ Collection of small PHP scripts and test utilities built over the years for quic
 test-ptrck-nl/
 ├── public/                    # Web-accessible files (DocumentRoot)
 │   ├── archive/              # Archived projects
-│   │   ├── mt940/           # MT940 banking file parser
-│   │   ├── n-builder/       # Website builder tool
-│   │   ├── survey/          # Survey form handler
-│   │   └── mapgenerator/    # Map generator utility
+│   │   ├── counter/         # Countdown timer widget
+│   │   ├── mapgenerator/    # Map generator utility
+│   │   └── stylish/         # Calendar styling assets
 │   ├── text/                # Text/image manipulation scripts
 │   └── vd/                  # Various design experiments
 ├── Dockerfile               # Container definition
@@ -54,24 +53,19 @@ This project is deployed on Coolify using Docker.
 
 ## 📝 Projects Included
 
-### MT940 Parser (`archive/mt940/`)
-Banking file parser that converts MT940 format to CSV.
-
-### N-Builder (`archive/n-builder/`)
-Visual website builder tool with drag-and-drop interface.
-
-### Survey (`archive/survey/`)
-Simple survey form handler with hash code generation.
+### Archive Projects (`archive/`)
+- **Counter** - Retro flip countdown timer widget
+- **Map Generator** - Google Maps integration utility
+- **Stylish** - Calendar styling assets
 
 ### Text/Image Utilities (`text/`)
 Various image manipulation scripts including blur effects and text overlay.
 
 ### Design Experiments (`vd/`)
-Collection of HTML/CSS/JS experiments and prototypes.
+Collection of HTML/CSS/JS experiments and prototypes including chat interfaces, animations, filters, and UI components.
 
 ## 🔒 Security Notes
 
-- XSS vulnerabilities have been fixed in `survey/index.php`
 - Input validation added to image processing scripts
 - HTTP URLs updated to HTTPS where applicable
 - Error display disabled in production
